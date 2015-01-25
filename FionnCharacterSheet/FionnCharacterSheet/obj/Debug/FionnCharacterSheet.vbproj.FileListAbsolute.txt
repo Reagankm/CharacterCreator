@@ -1,0 +1,14 @@
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\FionnCharacterSheet.Resources.resources
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\FionnCharacterSheet.vbproj.GenerateResource.Cache
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\bin\Debug\FionnCharacterSheet.exe
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\bin\Debug\FionnCharacterSheet.pdb
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\bin\Debug\FionnCharacterSheet.xml
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\FionnCharacterSheet.exe
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\FionnCharacterSheet.xml
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\FionnCharacterSheet.pdb
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\FionnCharacterSheet.AboutBox.resources
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\FionnCharacterSheet.BaseStats.resources
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\FionnCharacterSheet.Equipment.resources
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\FionnCharacterSheet.Welcome.resources
+C:\Users\ReaganWin\Desktop\FionnCharacterSheet\FionnCharacterSheet\obj\Debug\FionnCharacterSheet.SkillsFocuses.resources
