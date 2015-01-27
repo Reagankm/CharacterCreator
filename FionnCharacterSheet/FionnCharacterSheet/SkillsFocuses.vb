@@ -68,95 +68,96 @@ Public Class SkillsFocuses
             'Mark this focus as a Starting Skill (so user can't "untrain" in it)
             CharSkillAndFocusStringArray(m_rowCounter, 5) = "TRUE"
 
-            'TESTING: Randomly assign 70 skill points.  It takes 4 points to train in a skill and
-            '12 more points to specialize, it takes 2 points to train in a focus and 6 more to 
-            'specialize. You have to be trained in a skill before you can train in its focus.
-            Dim SkillPoints As Integer = 70
-            Dim RandomNum As Random = New Random(DateTime.Now.Millisecond)
-            Dim SkillRow As Integer
-            Dim FocusRow As Integer
-            Do Until SkillPoints < 2
-                Dim AssignPoints As Integer
-                SkillsListBox.SelectedIndex = RandomNum.Next(28)
-                SkillRow = FindItemInArray("Skill")
-                'Get a random number from 1 to 4 and assign skill points accordingly.
-                '1: Train in the skill 
-                '2: Specialize in the skill (train first if needed)
-                '3: Train in a random focus
-                '4: Specialize in a random focus
-                AssignPoints = RandomNum.Next(1, 4)
-                If AssignPoints = 1 Then
-                    'If untrained in this skill
-                    If TrainCheckBox.Checked = False Then
-                        'If you have enough skill points
-                        If SkillPoints >= 4 Then
-                            'Become trained in it, update values, and subtract 4 skillpoints
-                            TrainCheckBox.Checked = True
-                            UpdateTraining(SkillRow, False)
-                            RefreshScores(SkillRow, False)
-                            SkillPoints -= 4
-                        End If
-                    End If
-                ElseIf AssignPoints = 2 Then
-                    'If unspecialized in this skill
-                    If SpecializeCheckBox.Checked = False Then
-                        'If untrained and you have enough skill points 
-                        If TrainCheckBox.Checked = False And SkillPoints >= 18 Then
-                            'Become trained and specialized in it and update scores
-                            TrainCheckBox.Checked = True
-                            UpdateTraining(SkillRow, False)
-                            SpecializeCheckBox.Checked = True
-                            UpdateSpecialization(SkillRow, False)
-                            RefreshScores(SkillRow, False)
-                            SkillPoints -= 16
-                            'Else if you're already trained and have enough skill points
-                        ElseIf TrainCheckBox.Checked = True And SkillPoints >= 12 Then
-                            'Become specialized in it and update scores
-                            SpecializeCheckBox.Checked = True
-                            UpdateSpecialization(SkillRow, False)
-                            RefreshScores(SkillRow, False)
-                            SkillPoints -= 12
-                        End If
-                    End If
-                Else
-                    'Choose a random focus
-                    FocusesListBox.SelectedIndex = RandomNum.Next(FocusesListBox.Items.Count)
-                    FocusRow = FindItemInArray("Focus")
-                    If AssignPoints = 3 Then
-                        'If untrained and you have enough skill points
-                        If TrainCheckBox.Checked = False And SkillPoints >= 2 Then
-                            'Become trained and subtract skill points
-                            TrainCheckBox.Checked = True
-                            UpdateTraining(FocusRow, False)
-                            RefreshScores(FocusRow, False)
-                            SkillPoints -= 2
-                        End If
-                    Else
-                        'If unspecialized
-                        If SpecializeCheckBox.Checked = False Then
-                            'If untrained and you have the skill points
-                            If TrainCheckBox.Checked = False And SkillPoints >= 8 Then
-                                'Become trained and specialized and subtract skill points
-                                TrainCheckBox.Checked = True
-                                UpdateTraining(FocusRow, False)
-                                SpecializeCheckBox.Checked = True
-                                UpdateSpecialization(FocusRow, False)
-                                RefreshScores(FocusRow, False)
-                                SkillPoints -= 8
-                                'Else if you're already trained and have the skill points
-                            ElseIf TrainCheckBox.Checked = True And SkillPoints >= 6 Then
-                                'Become specialized and subtract skill points
-                                SpecializeCheckBox.Checked = True
-                                UpdateSpecialization(FocusRow, False)
-                                RefreshScores(FocusRow, False)
-                                SkillPoints -= 6
-                            End If
-                        End If
-                    End If
-                End If
+            'TESTING: Uncomment the code below to randomly assign 70 skill points.  It takes 
+            '4 points to train in a skill and 12 more points to specialize; it takes 2 points 
+            'to train in a focus and 6 more to specialize. You have to be trained in a skill 
+            'before you can train in its focus.
+            'Dim SkillPoints As Integer = 70
+            'Dim RandomNum As Random = New Random(DateTime.Now.Millisecond)
+            'Dim SkillRow As Integer
+            'Dim FocusRow As Integer
+            'Do Until SkillPoints < 2
+            '    Dim AssignPoints As Integer
+            '    SkillsListBox.SelectedIndex = RandomNum.Next(28)
+            '    SkillRow = FindItemInArray("Skill")
+            '    'Get a random number from 1 to 4 and assign skill points accordingly.
+            '    '1: Train in the skill 
+            '    '2: Specialize in the skill (train first if needed)
+            '    '3: Train in a random focus
+            '    '4: Specialize in a random focus
+            '    AssignPoints = RandomNum.Next(1, 4)
+            '    If AssignPoints = 1 Then
+            '        'If untrained in this skill
+            '        If TrainCheckBox.Checked = False Then
+            '            'If you have enough skill points
+            '            If SkillPoints >= 4 Then
+            '                'Become trained in it, update values, and subtract 4 skillpoints
+            '                TrainCheckBox.Checked = True
+            '                UpdateTraining(SkillRow, False)
+            '                RefreshScores(SkillRow, False)
+            '                SkillPoints -= 4
+            '            End If
+            '        End If
+            '    ElseIf AssignPoints = 2 Then
+            '        'If unspecialized in this skill
+            '        If SpecializeCheckBox.Checked = False Then
+            '            'If untrained and you have enough skill points 
+            '            If TrainCheckBox.Checked = False And SkillPoints >= 18 Then
+            '                'Become trained and specialized in it and update scores
+            '                TrainCheckBox.Checked = True
+            '                UpdateTraining(SkillRow, False)
+            '                SpecializeCheckBox.Checked = True
+            '                UpdateSpecialization(SkillRow, False)
+            '                RefreshScores(SkillRow, False)
+            '                SkillPoints -= 16
+            '                'Else if you're already trained and have enough skill points
+            '            ElseIf TrainCheckBox.Checked = True And SkillPoints >= 12 Then
+            '                'Become specialized in it and update scores
+            '                SpecializeCheckBox.Checked = True
+            '                UpdateSpecialization(SkillRow, False)
+            '                RefreshScores(SkillRow, False)
+            '                SkillPoints -= 12
+            '            End If
+            '        End If
+            '    Else
+            '        'Choose a random focus
+            '        FocusesListBox.SelectedIndex = RandomNum.Next(FocusesListBox.Items.Count)
+            '        FocusRow = FindItemInArray("Focus")
+            '        If AssignPoints = 3 Then
+            '            'If untrained and you have enough skill points
+            '            If TrainCheckBox.Checked = False And SkillPoints >= 2 Then
+            '                'Become trained and subtract skill points
+            '                TrainCheckBox.Checked = True
+            '                UpdateTraining(FocusRow, False)
+            '                RefreshScores(FocusRow, False)
+            '                SkillPoints -= 2
+            '            End If
+            '        Else
+            '            'If unspecialized
+            '            If SpecializeCheckBox.Checked = False Then
+            '                'If untrained and you have the skill points
+            '                If TrainCheckBox.Checked = False And SkillPoints >= 8 Then
+            '                    'Become trained and specialized and subtract skill points
+            '                    TrainCheckBox.Checked = True
+            '                    UpdateTraining(FocusRow, False)
+            '                    SpecializeCheckBox.Checked = True
+            '                    UpdateSpecialization(FocusRow, False)
+            '                    RefreshScores(FocusRow, False)
+            '                    SkillPoints -= 8
+            '                    'Else if you're already trained and have the skill points
+            '                ElseIf TrainCheckBox.Checked = True And SkillPoints >= 6 Then
+            '                    'Become specialized and subtract skill points
+            '                    SpecializeCheckBox.Checked = True
+            '                    UpdateSpecialization(FocusRow, False)
+            '                    RefreshScores(FocusRow, False)
+            '                    SkillPoints -= 6
+            '                End If
+            '            End If
+            '        End If
+            '    End If
 
 
-            Loop
+            'Loop
 
         Catch ex As Exception
             MessageBox.Show("There was an error!  Panic panic panic panic!" & vbCrLf & _
