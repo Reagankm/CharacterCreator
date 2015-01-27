@@ -356,21 +356,21 @@ Public Class BaseStats
     End Function
 
     Private Sub NewCharacter_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'Autofill values for testing
-        Dim randomGen As Random = New Random(DateTime.Now.Millisecond)
-        CharacterNameTextBox.Text = "Test Case"
-        RaceComboBox.SelectedIndex = randomGen.Next(8)
-        CultureComboBox.SelectedIndex = randomGen.Next(17)
-        ConTextBox.Text = CStr(randomGen.Next(6, 17))
-        DexTextBox.Text = CStr(randomGen.Next(6, 17))
-        IntTextBox.Text = CStr(randomGen.Next(6, 17))
-        MagTextBox.Text = CStr(randomGen.Next(6, 17))
-        PerTextBox.Text = CStr(randomGen.Next(6, 17))
-        StrTextBox.Text = CStr(randomGen.Next(6, 17))
-        WilTextBox.Text = CStr(randomGen.Next(6, 17))
-        WisTextBox.Text = CStr(randomGen.Next(6, 17))
-        StaminaTextBox.Text = CStr(randomGen.Next(15, 30))
-        ManaTextBox.Text = CStr(randomGen.Next(10, 30))
+        'Uncomment the lines below to autofill values for testing.  
+        'Dim randomGen As Random = New Random(DateTime.Now.Millisecond)
+        'CharacterNameTextBox.Text = "Test Case"
+        'RaceComboBox.SelectedIndex = randomGen.Next(8)
+        'CultureComboBox.SelectedIndex = randomGen.Next(17)
+        'ConTextBox.Text = CStr(randomGen.Next(6, 17))
+        'DexTextBox.Text = CStr(randomGen.Next(6, 17))
+        'IntTextBox.Text = CStr(randomGen.Next(6, 17))
+        'MagTextBox.Text = CStr(randomGen.Next(6, 17))
+        'PerTextBox.Text = CStr(randomGen.Next(6, 17))
+        'StrTextBox.Text = CStr(randomGen.Next(6, 17))
+        'WilTextBox.Text = CStr(randomGen.Next(6, 17))
+        'WisTextBox.Text = CStr(randomGen.Next(6, 17))
+        'StaminaTextBox.Text = CStr(randomGen.Next(15, 30))
+        'ManaTextBox.Text = CStr(randomGen.Next(10, 30))
 
 
     End Sub
