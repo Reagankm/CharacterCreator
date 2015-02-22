@@ -1,4 +1,4 @@
-# CharactorCreator
+# CharacterCreator
 A character creator for my friend's unpublished tabletop RPG
 
 This is my first attempt at creating a repository on GitHub so I apologize if anything was done incorrectly.
